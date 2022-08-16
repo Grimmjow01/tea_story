@@ -13,12 +13,8 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
       },
-      role_id: {
-        references: {
-          model: 'Roles',
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
+      user_role: {
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,
