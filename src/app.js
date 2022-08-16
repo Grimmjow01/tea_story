@@ -7,7 +7,9 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
 const { sequelize } = require('../db/models');
-const renderTemplate = require('../lib/renderReactModule');
+// const renderTemplate = require('../../lib/renderReactModule');
+
+const authRouter = require('./routes/authRoutes')
 
 const app = express();
 
@@ -31,6 +33,9 @@ const sessionConfig = {
     httpOnly: true, // * куки только по http
   },
 };
+
+// мидлварки для роутов
+app.use('/', authRouter);
 
 app.use(session(sessionConfig));
 
