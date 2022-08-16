@@ -11,13 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasMany(models.Comment, { foreignKey: 'user_id' });
-      this.belongsTo(models.Role, { foreignKey: 'role_id' });
     }
   }
   User.init({
     login: DataTypes.STRING,
     password: DataTypes.STRING,
-    role_id: DataTypes.INTEGER
+    user_role: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'User',
