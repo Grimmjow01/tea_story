@@ -1,6 +1,6 @@
 const express = require('express');
 const renderTemplate = require('../../lib/renderReactModule');
-const Home = require('../../views/Home');
+const Home = require('../views/Home');
 const { Tea } = require('../../db/models');
 
 const router = express.Router();
