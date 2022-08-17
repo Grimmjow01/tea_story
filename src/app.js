@@ -14,6 +14,7 @@ const authRouter = require('./routers/authRoutes')
 const renderTemplate = require('../lib/renderReactModule');
 const indexRoutes = require('./routers/indexRoutes');
 const homeRoutes = require('./routers/homeRoutes');
+const profileRoute = require('./routers/profileRoute');
 
 
 const app = express();
@@ -45,6 +46,7 @@ app.use(session(sessionConfig));
 app.use('/', authRouter);
 app.use('/', indexRoutes);
 app.use('/', homeRoutes);
+app.use('/', profileRoute)
 
 app.listen(PORT, async () => {
   try {
