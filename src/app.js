@@ -8,6 +8,8 @@ const FileStore = require('session-file-store')(session);
 
 const { sequelize } = require('../db/models');
 const renderTemplate = require('../lib/renderReactModule');
+const indexRoutes = require('./routers/indexRoutes');
+const homeRoutes = require('./routers/homeRoutes');
 
 const app = express();
 
@@ -33,6 +35,9 @@ const sessionConfig = {
 };
 
 app.use(session(sessionConfig));
+
+app.use('/', indexRoutes);
+app.use('/', homeRoutes);
 
 app.listen(PORT, async () => {
   try {
