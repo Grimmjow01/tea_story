@@ -25,6 +25,7 @@ module.exports = function Layout({ children, newUser }) {
                       ? (
                         <li className="nav-item">
                           <a className="nav-link active" aria-current="page" href="/profile">Личный Кабинет</a>
+                          <a className="nav-link active" aria-current="page" href="/auth/logout">Выйти</a>
                         </li>
                       )
                       : (
