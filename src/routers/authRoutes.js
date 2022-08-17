@@ -44,7 +44,8 @@ router
       const passCheck = await bcrypt.compare((password), checkUser.password);
       if (passCheck) {
         req.session.newUser = checkUser.login;
-        req.session.role = checkUser.role;
+        req.session.role = checkUser.user_role;
+      console.log(checkUser)
         req.session.save(() => {
           res.json({ login: 'ok' });
         });
