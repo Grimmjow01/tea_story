@@ -10,13 +10,13 @@ route.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     console.log(req);
-    let { login } = req.params;
-    if (login === undefined) login = 'Админ';
+    const { newUser, role } = req.session;
+    let login = newUser;
+    if (!login) login = 'Гость';
     const onlyInfo = await Tea.findOne({ where: { id }, raw: true });
     const comments = await Comment.findAll({ where: { tea_id: id }, include: { model: User }, raw: true });
     const oneUser = await User.findOne({ where: { login }, raw: true });
     // console.log(comments);
-    const { newUser, role } = req.session;
     render(InfoTea, {
       onlyInfo, comments, oneUser, newUser, role,
     }, res);

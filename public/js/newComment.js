@@ -1,5 +1,6 @@
 const btn = document.querySelector('.plus');
-const nashcomment = document.querySelector('.comments');
+// const nashcomment = document.querySelector('.del');
+const allcom = document.querySelector('.comments');
 const main = document.querySelector('.Content');
 const loginId = document.querySelector('.loginId');
 const loginName = document.querySelector('.login');
@@ -31,21 +32,23 @@ btn?.addEventListener('click', async (e) => {
     <h4>${loginN}</h4>
     ${text}
   </div>`;
-  nashcomment.appendChild(newComme);
+  allcom.appendChild(newComme);
 });
 
-nashcomment.addEventListener('click', async (e) => {
-  e.preventDefault();
-  const { id } = e.target;
-  console.log(id);
-  const response = await fetch('/tea/deleteCom', {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({ id }),
-  });
-  if (response.status === 200) {
-    nashcomment.removeChild(e.target.parentNode.parentNode);
+allcom?.addEventListener('click', async (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    e.preventDefault();
+    const { id } = e.target;
+    console.log(id);
+    const response = await fetch('/tea/deleteCom', {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ id }),
+    });
+    if (response.status === 200) {
+      allcom.removeChild(e.target.parentNode.parentNode);
+    }
   }
 });

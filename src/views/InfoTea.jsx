@@ -7,17 +7,17 @@ module.exports = function InfoTea(newInfo) {
     id, title, location, image_url, discription, sort_tea,
   } = newInfo.onlyInfo;
   const mas = newInfo.comments;
-  const activUser = newInfo.newUser;
-  const { role } = newInfo;
+  const activUser = newInfo.oneUser;
+  const { role, newUser } = newInfo;
   // console.log('Смотри сюда=> ');
   // console.log('Смотри сюда=> ', mas);
   return (
-    <Layout>
+    <Layout newUser={newUser}>
       <link rel="stylesheet" href="../css/info.css" />
       <script defer src="../js/newComment.js" />
       <div className="container-xl Content" id={id}>
         <div className="card mb-3 loginId" id={activUser.id} max-width="540px;">
-          <div className="row g-0 login" id={activUser.login}>
+          <div className="row g-0 login" id={newUser}>
             <div className="col-md-4">
               <img src={image_url} className="img-fluid rounded-start" alt="..." />
             </div>
@@ -36,7 +36,7 @@ module.exports = function InfoTea(newInfo) {
                 </h4>
                 <h5 className="card-text">{discription}</h5>
                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                {activUser
+                {newUser
                   ? (
                     <form>
                       <input className="form-control form-control-lg" type="text" name="comment" placeholder="Оставьте свой комментарий! :)" aria-label=".form-control-lg example" />
@@ -53,7 +53,7 @@ module.exports = function InfoTea(newInfo) {
         </div>
         <h3 className="namecom">Комментарии о чае:</h3>
         <div className="comments">
-          {console.log(activUser)}
+          {/* {console.log(activUser)} */}
           {role
             ? mas?.map((el, index) => (
               <div className="card">

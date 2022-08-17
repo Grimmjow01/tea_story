@@ -7,7 +7,15 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
 const { sequelize } = require('../db/models');
+
+// const renderTemplate = require('../../lib/renderReactModule');
+
+const authRouter = require('./routers/authRoutes')
 const renderTemplate = require('../lib/renderReactModule');
+const indexRoutes = require('./routers/indexRoutes');
+const homeRoutes = require('./routers/homeRoutes');
+const profileRoute = require('./routers/profileRoute');
+
 
 const app = express();
 
@@ -23,7 +31,7 @@ const infoRouter = require('./routers/info');
 const { PORT, SESSION_SECRET } = process.env;
 
 const sessionConfig = {
-  name: 'your coockie name', // * Название куки
+  name: 'userCookie', // * Название куки
   store: new FileStore(), // * подключение стора (БД для куки) для хранения
   secret: SESSION_SECRET ?? 'your key', // * ключ для шифрования куки
   resave: false, // * если true, пересохраняет сессию, даже если она не поменялась
@@ -33,9 +41,15 @@ const sessionConfig = {
     httpOnly: true, // * куки только по http
   },
 };
-
+// сначала ссесии, потом руты
 app.use(session(sessionConfig));
 app.use('/tea', infoRouter);
+
+// мидлварки для роутов
+app.use('/', authRouter);
+app.use('/', indexRoutes);
+app.use('/', homeRoutes);
+app.use('/', profileRoute)
 
 app.listen(PORT, async () => {
   try {
