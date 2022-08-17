@@ -7,9 +7,14 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
 const { sequelize } = require('../db/models');
+
 // const renderTemplate = require('../../lib/renderReactModule');
 
 const authRouter = require('./routers/authRoutes')
+const renderTemplate = require('../lib/renderReactModule');
+const indexRoutes = require('./routers/indexRoutes');
+const homeRoutes = require('./routers/homeRoutes');
+
 
 const app = express();
 
@@ -38,6 +43,8 @@ app.use(session(sessionConfig));
 
 // мидлварки для роутов
 app.use('/', authRouter);
+app.use('/', indexRoutes);
+app.use('/', homeRoutes);
 
 app.listen(PORT, async () => {
   try {
