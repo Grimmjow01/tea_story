@@ -9,7 +9,7 @@ const FileStore = require('session-file-store')(session);
 const { sequelize } = require('../db/models');
 // const renderTemplate = require('../../lib/renderReactModule');
 
-const authRouter = require('./routes/authRoutes')
+const authRouter = require('./routers/authRoutes')
 
 const app = express();
 
