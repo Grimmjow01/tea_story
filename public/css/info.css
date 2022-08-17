@@ -1,0 +1,18 @@
+input {
+    margin-top: 80px;
+}
+.namecom {
+    margin-left: 20px;
+}
+button {
+    margin-top: 20px;
+}
+body {
+    background-color: bisque;
+}
+.del {
+    background-image: url(..//img/delete.png);
+    height: 70px;
+    width: 65px;
+    background-repeat : no-repeat;
+}

@@ -17,6 +17,8 @@ app.use(express.static(path.join(__dirname, '../public/')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const infoRouter = require('./routers/info');
+
 // Выносим порт в .env и на всякий случай подставляем дефолтный через ||
 const { PORT, SESSION_SECRET } = process.env;
 
@@ -33,6 +35,7 @@ const sessionConfig = {
 };
 
 app.use(session(sessionConfig));
+app.use('/tea', infoRouter);
 
 app.listen(PORT, async () => {
   try {
