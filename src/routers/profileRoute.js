@@ -109,6 +109,7 @@ router.patch('/profile/:id', async (req, res) => {
 
 router.delete('/profile/:id', async (req, res) => {
   try {
+    await Comment.destroy({ where: { tea_id: req.params.id } })
     await Tea.destroy({ where: { id: req.params.id } });
     res.json({ isDeleteSuccessful: true });
   } catch (error) {
