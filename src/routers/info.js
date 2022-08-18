@@ -15,7 +15,6 @@ route.get('/:id', async (req, res) => {
     const onlyInfo = await Tea.findOne({ where: { id }, raw: true });
     const comments = await Comment.findAll({ where: { tea_id: id }, include: { model: User }, raw: true });
     const oneUser = await User.findOne({ where: { login }, raw: true });
-    // console.log(comments);
     render(InfoTea, {
       onlyInfo, comments, oneUser, newUser, role,
     }, res);

@@ -69,6 +69,13 @@ module.exports = function InfoTea(newInfo) {
                   <h4>{el['User.login']}</h4>
                   {el.text}
                 </div>
+                {el['User.login'] === newUser
+                  ? (
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                      <button className="btn btn-danger me-md-2 del" type="button" id={el.id} />
+                    </div>
+                  )
+                  : console.log('123')}
               </div>
             ))}
         </div>
