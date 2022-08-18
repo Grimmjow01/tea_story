@@ -15,12 +15,13 @@ module.exports = function InfoTea(newInfo) {
     <Layout newUser={newUser}>
       <link rel="stylesheet" href="../css/info.css" />
       <script defer src="../js/newComment.js" />
-      <div className="container-xl Content" id={id}>
-        <div className="card mb-3 loginId" id={activUser.id} max-width="540px;">
+      <div className="tea-div" id={id}>
+        <div className="card card-entire mb-3 loginId card-flex" id={activUser.id} max-width="250px;">
           <div className="row g-0 login" id={newUser}>
             <div className="col-md-4">
               <img src={image_url} className="img-fluid rounded-start" alt="..." />
             </div>
+            {/* <div className="card"> */}
             <div className="col-md-8 col-sm-4">
               <div className="card-body">
                 <h2 className="card-title">{title}</h2>
@@ -41,7 +42,7 @@ module.exports = function InfoTea(newInfo) {
                     <form>
                       <input className="form-control form-control-lg" type="text" name="comment" placeholder="Оставьте свой комментарий! :)" aria-label=".form-control-lg example" />
                       <div className="d-grid gap-2 d-md-block">
-                        <button className="btn btn-primary me-md-2 plus" type="submit">Оставить комментарий</button>
+                        <button className="btn btn-success" type="submit">Оставить комментарий</button>
                       </div>
                     </form>
                   )

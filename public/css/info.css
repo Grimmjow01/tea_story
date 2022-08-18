@@ -1,4 +1,4 @@
-input {
+/* input {
     margin-top: 80px;
 }
 .namecom {
@@ -7,12 +7,35 @@ input {
 button {
     margin-top: 20px;
 }
-body {
-    background-color: bisque;
-}
 .del {
     background-image: url(..//img/delete.png);
     height: 70px;
     width: 65px;
     background-repeat : no-repeat;
+} */
+.tea-div{
+    background-image: url(../img/auth.jpg);
+    background-size: 100%;
+    background-position: 0;
+    min-width: 100vh;
+    min-height: 100vh;
+    margin-top: 0%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+
+}
+.card-entire{
+    width: 1000px;
+    background-color: rgba(255, 255, 255, 0.383);
+    
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    ba
+
 }

@@ -1,3 +1,7 @@
+* {
+    /* color: rgb(80, 113, 89); */
+}
+
 .form-control {
     max-width: 300px;
     margin-bottom: 20px;
@@ -6,8 +10,24 @@
 .flexdiv {
     /* margin-left: 300px;
     margin-right: 300px;; */
+    display: inline-flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 70px
+}
+
+.transparent {
+    background-color: rgba(145, 173, 153, 0.477);
+    /* margin-left: 500px;
+    margin-right: 500px; */
+    width: 800px;
+    border-radius: 25px;
+    /* margin-top: 30px;; */
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 250px;
+    margin-bottom: 250px;;
 }
 
 .center {
@@ -17,28 +37,27 @@
 }
 
 .colorGreen {
-    color: rgb(23, 132, 43)
+    /* color: rgb(23, 132, 43) */
 }
 
 .lvica {
-    background-image: url(../images/IMG_7817-3.jpg);
+    background-image: url(../img/auth.jpg);
     background-size: 100%;
     background-position: 0;
+    min-width: 100vh;
     min-height: 100vh;
     margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.transparent {
-    background-color: rgba(255, 255, 255, 0.317);
-    background-color;
-    margin-left: 500px;
-    margin-right: 500px;
-    border-radius: 25px;
-    /* margin-top: 30px;; */
-}
 
 .formTransparent {
     opacity: 0.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .formTransparent:hover {
@@ -48,4 +67,19 @@
 .btn {
     margin-bottom: 30px;
     ;
+}
+
+.fontColor {
+    /* color: rgb(38, 67, 46); */
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px ;
+}
+.navbar{
+    color:blueviolet;
+    --bs-navbar-color:blueviolet;
+    --bs-navbar-hover-color: blueviolet;
+    --bs-navbar-disabled-color: blueviolet;
+    --bs-navbar-active-color: blueviolet;
 }
