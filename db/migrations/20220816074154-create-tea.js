@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       discription: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       sort_tea: {
         type: Sequelize.STRING
