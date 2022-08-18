@@ -1,4 +1,4 @@
-/* input {
+input {
     margin-top: 80px;
 }
 .namecom {
@@ -12,7 +12,7 @@ button {
     height: 70px;
     width: 65px;
     background-repeat : no-repeat;
-} */
+}
 .tea-div{
     background-image: url(../img/auth.jpg);
     background-size: 100%;
@@ -36,6 +36,5 @@ button {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    ba
 
 }

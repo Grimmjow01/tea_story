@@ -34,7 +34,10 @@ btn?.addEventListener('click', async (e) => {
     <button class="btn btn-danger me-md-2 del" type="button" id=${result.id} />
   </div>`;
     allcom.appendChild(newComme);
-  } else alert('Пустой комментарий не отправить');
+  } else {
+    console.log('ghfytjgj');
+    alert('Пустой комментарий не отправить');
+  }
 });
 
 allcom?.addEventListener('click', async (e) => {
