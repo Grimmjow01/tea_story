@@ -9,14 +9,12 @@ const render = require('../../lib/renderReactModule');
 route.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(req);
     const { newUser, role } = req.session;
     let login = newUser;
     if (!login) login = 'Гость';
     const onlyInfo = await Tea.findOne({ where: { id }, raw: true });
     const comments = await Comment.findAll({ where: { tea_id: id }, include: { model: User }, raw: true });
     const oneUser = await User.findOne({ where: { login }, raw: true });
-    // console.log(comments);
     render(InfoTea, {
       onlyInfo, comments, oneUser, newUser, role,
     }, res);
@@ -26,9 +24,7 @@ route.get('/:id', async (req, res) => {
 });
 
 route.post('/:id', async (req, res) => {
-  console.log(req.body);
   const { text, id1 } = req.body;
-  console.log(req.body);
   const { id } = req.params;
   try {
     const newCom = await Comment.create({ user_id: id1, tea_id: id, text });
