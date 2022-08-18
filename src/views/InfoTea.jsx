@@ -51,7 +51,6 @@ module.exports = function InfoTea(newInfo) {
         </div>
         <h3 className="namecom">Комментарии о чае:</h3>
         <div className="comments">
-          {/* {console.log(activUser)} */}
           {role
             ? mas?.map((el, index) => (
               <div className="card">

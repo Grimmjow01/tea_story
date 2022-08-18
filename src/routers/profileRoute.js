@@ -17,9 +17,8 @@ router.get('/profile', async (req, res) => {
     const teaInforms = await Tea.findAll({ order: [['id']] });
     const { id } = await User.findOne({ where: {login: newUser}, raw: true });
     const teaComments = await Comment.findAll({
-      where: { user_id: id }, raw: true,
-    });
-    renderTemplate(Profile, { teaInforms, teaComments, role, newUser }, res);
+      where: { user_id: id }, raw: true });
+    renderTemplate(Profile, { teaInforms, teaComments, role, newUser, id }, res);
   } catch (error) {
     renderTemplate(Error, {
       message: 'Не удалось получить записи из базы данных.',
