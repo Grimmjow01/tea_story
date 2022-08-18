@@ -1,7 +1,5 @@
 const registerForm = document.querySelector('#registerForm');
 
-console.log(registerForm);
-
 registerForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const login = e.target.login.value;

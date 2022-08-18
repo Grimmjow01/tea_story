@@ -21,9 +21,7 @@ router
       } else {
         const hash = await bcrypt.hash((password), 10);
         const newUser = await User.create({ login, password: hash, user_role: false });
-        // console.log(newUser.login);
         req.session.newUser = newUser.login;
-        // console.log('req.session ', req.session);
         req.session.save(() => {
           res.json({ login: 'ok' });
         });
@@ -45,7 +43,6 @@ router
       if (passCheck) {
         req.session.newUser = checkUser.login;
         req.session.role = checkUser.user_role;
-      console.log(checkUser)
         req.session.save(() => {
           res.json({ login: 'ok' });
         });
@@ -53,7 +50,6 @@ router
         res.json({ user: 'wrong' });
       }
     } catch (error) {
-      console.log('error', error);
       res.send(`Error ------> ${error}`);
     }
   })

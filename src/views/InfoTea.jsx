@@ -9,8 +9,6 @@ module.exports = function InfoTea(newInfo) {
   const mas = newInfo.comments;
   const activUser = newInfo.oneUser;
   const { role, newUser } = newInfo;
-  // console.log('Смотри сюда=> ');
-  // console.log('Смотри сюда=> ', mas);
   return (
     <Layout newUser={newUser}>
       <link rel="stylesheet" href="../css/info.css" />
@@ -53,7 +51,6 @@ module.exports = function InfoTea(newInfo) {
         </div>
         <h3 className="namecom">Комментарии о чае:</h3>
         <div className="comments">
-          {/* {console.log(activUser)} */}
           {role
             ? mas?.map((el, index) => (
               <div className="card">

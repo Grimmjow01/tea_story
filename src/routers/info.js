@@ -9,7 +9,6 @@ const render = require('../../lib/renderReactModule');
 route.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(req);
     const { newUser, role } = req.session;
     let login = newUser;
     if (!login) login = 'Гость';
@@ -26,9 +25,7 @@ route.get('/:id', async (req, res) => {
 });
 
 route.post('/:id', async (req, res) => {
-  console.log(req.body);
   const { text, id1 } = req.body;
-  console.log(req.body);
   const { id } = req.params;
   try {
     const newCom = await Comment.create({ user_id: id1, tea_id: id, text });

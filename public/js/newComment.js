@@ -12,8 +12,6 @@ btn?.addEventListener('click', async (e) => {
   const { id } = main;
   const id1 = loginId.id;
   const loginN = loginName.id;
-  console.log(loginId);
-  console.log(id1);
   const responce = await fetch(`/tea/${id}`, {
     method: 'POST',
     headers: {
