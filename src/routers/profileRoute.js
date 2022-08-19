@@ -14,11 +14,10 @@ router.get('/profile', async (req, res) => {
   try {
     const { newUser, role } = req.session;
     const teaInforms = await Tea.findAll({ order: [['id']] });
-    const { id } = await User.findOne({ where: { login: newUser }, raw: true });
-    const teaComments = await Comment.findAll({ where: { user_id: id }, raw: true });
-    renderTemplate(Profile, {
-      teaInforms, teaComments, role, newUser, id,
-    }, res);
+    const { id } = await User.findOne({ where: {login: newUser}, raw: true });
+    const teaComments = await Comment.findAll({
+      where: { user_id: id }, raw: true });
+    renderTemplate(Profile, { teaInforms, teaComments, role, newUser, id }, res);
   } catch (error) {
     renderTemplate(Error, {
       message: 'Не удалось получить записи из базы данных.',
@@ -51,8 +50,7 @@ router.post('/profile/newtea', async (req, res) => {
       returning: true,
       plain: true,
     });
-
-    res.redirect(`/profile/${newTea.id}`);
+    res.json({ newTea });
   } catch (error) {
     console.error('error=============', error);
     renderTemplate(Error, {

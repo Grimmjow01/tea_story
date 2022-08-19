@@ -2,7 +2,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function NewTea({newUser}) {
+module.exports = function NewTea({ newUser }) {
   return (
     <Layout newUser={newUser}>
       {/* <link rel="stylesheet" href="../css/ediTea.css" /> */}
@@ -10,7 +10,7 @@ module.exports = function NewTea({newUser}) {
         <h1 className="margin10">Добавить</h1>
         <br />
 
-        <form id="newTeaForm " method="POST">
+        <form id="newTeaForm" action="/profile/newtea" method="post">
           Название:
           {' '}
           <input
