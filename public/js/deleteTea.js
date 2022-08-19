@@ -1,5 +1,5 @@
 const deleteTeaButton = document.querySelector('#deleteTeaButton');
-
+console.log(deleteTeaButton)
 deleteTeaButton.addEventListener('click', async (e) => {
   const response = await fetch(`/profile/${e.target.dataset.onteaid}`, {
     method: 'DELETE',

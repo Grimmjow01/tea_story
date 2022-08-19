@@ -9,6 +9,7 @@ module.exports = function InfoTea(newInfo) {
   const mas = newInfo.comments;
   const activUser = newInfo.oneUser;
   const { role, newUser } = newInfo;
+  console.log("image_url--->", image_url)
   return (
     <Layout newUser={newUser}>
       <link rel="stylesheet" href="../css/info.css" />
@@ -50,30 +51,35 @@ module.exports = function InfoTea(newInfo) {
             </div>
           </div>
         </div>
+        <br />
         <h3 className="namecom">Комментарии о чае:</h3>
         <div className="comments">
           {role
-            ? mas?.map((el, index) => (
-              <div className="card">
-                <div className="card-body">
+            ? mas?.map((el, index) => ( // админ
+              <div className="card card-width-comment">
+                <div className="card-body ">
                   <h4>{el['User.login']}</h4>
                   {el.text}
                 </div>
-                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button className="btn btn-danger me-md-2 del" type="button" id={el.id} />
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end btn-center">
+                  <button className="btn me-md-2 del btn-nonVisible" type="button" id={el.id} width="15px" height="20px">
+                    <img src="../img/delete.png" alt="..." width="15px" height="20px" className="img-btn" id={el.id} />
+                  </button>
                 </div>
               </div>
             ))
-            : mas?.map((el, index) => (
-              <div className="card">
-                <div className="card-body">
+            : mas?.map((el, index) => ( // юзер и гость
+              <div className="card ">
+                <div className="card-body ">
                   <h4>{el['User.login']}</h4>
                   {el.text}
                 </div>
-                {el['User.login'] === newUser
+                {el['User.login'] === newUser // юзер
                   ? (
                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                      <button className="btn btn-danger me-md-2 del" type="button" id={el.id} />
+                      <button className="btn me-md-2 del btn-nonVisible" type="button" id={el.id} width="15px" height="20px">
+                        <img src="../img/delete.png" alt="..." width="15px" height="20px" className="img-btn" id={el.id} />
+                      </button>
                     </div>
                   )
                   : console.log('123')}

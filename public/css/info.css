@@ -1,19 +1,39 @@
 input {
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
+
 .namecom {
     margin-left: 20px;
 }
+
 button {
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
+
 .del {
-    background-image: url(..//img/delete.png);
-    height: 70px;
-    width: 65px;
-    background-repeat : no-repeat;
+    /* background-image: url(..//img/delete.png);*/
+    height: 50px;
+    /* width: 20px; */
+    /* visibility: visible; */
+    background-repeat: no-repeat;
 }
-.tea-div{
+
+.btn-center{
+    display:flex;
+    align-items: center;
+
+}
+
+.btn-nonVisible {
+    opacity: 0.2;
+}
+
+.btn-nonVisible:hover {
+    opacity: 1;
+
+}
+
+.tea-div {
     background-image: url(../img/auth.jpg);
     background-size: 100%;
     background-position: 0;
@@ -26,15 +46,20 @@ button {
     flex-direction: column;
 
 }
-.card-entire{
+
+.card-entire {
     width: 1000px;
-    background-color: rgba(255, 255, 255, 0.383);
-    
+    background-color: rgba(255, 255, 255, 0.655);
 }
 
-.comments{
+.comments {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.655);
+}
 
+.card {
+    display: flex;
+    flex-direction: row;
 }

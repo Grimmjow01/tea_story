@@ -1,5 +1,5 @@
 * {
-    /* color: rgb(80, 113, 89); */
+    color: rgb(80, 113, 89);
 }
 
 .form-control {
@@ -10,10 +10,11 @@
 .flexdiv {
     /* margin-left: 300px;
     margin-right: 300px;; */
+    width: 100%;
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 70px
+    /* gap: 70px */
 }
 
 .transparent {
@@ -27,7 +28,8 @@
     align-items: center;
     flex-direction: column;
     margin-right: 250px;
-    margin-bottom: 250px;;
+    margin-bottom: 250px;
+    ;
 }
 
 .center {
@@ -37,7 +39,7 @@
 }
 
 .colorGreen {
-    /* color: rgb(23, 132, 43) */
+    color: rgb(23, 132, 43)
 }
 
 .lvica {
@@ -50,6 +52,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.add-new-tea {
+    background-image: url(../img/auth.jpg);
+    background-size: 100%;
+    background-position: 0;
+    min-width: 100vh;
+    min-height: 100vh;
+    margin-top: 0%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.new-tea-form {
+    max-width: 600px;
+    ;
 }
 
 
@@ -65,8 +85,7 @@
 }
 
 .btn {
-    margin-bottom: 30px;
-    ;
+    /* margin-bottom: 30px; */
 }
 
 .fontColor {
@@ -74,12 +93,60 @@
     background-color: white;
     border-radius: 5px;
     margin: 5px;
-    padding: 5px ;
+    padding: 5px;
 }
-.navbar{
-    color:blueviolet;
-    --bs-navbar-color:blueviolet;
-    --bs-navbar-hover-color: blueviolet;
-    --bs-navbar-disabled-color: blueviolet;
-    --bs-navbar-active-color: blueviolet;
+
+.font-small {
+    font-size: small;
+}
+
+.navbar {
+    color: rgb(38, 67, 46);
+    --bs-navbar-color: rgb(38, 67, 46);
+    --bs-navbar-hover-color: rgb(38, 67, 46);
+    --bs-navbar-disabled-color: rgb(38, 67, 46);
+    --bs-navbar-active-color: rgb(38, 67, 46);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.655);
+    --bs-card-border-width: 2px;
+    --bs-card-border-color: rgba(74, 115, 86, 0.346);
+}
+
+.backColorHeader {
+    background-color: rgb(145, 173, 153);
+}
+
+.card-width-comment {
+    width: 1000px;
+}
+
+.show-one-tea-div-flex {
+    display: flex;
+    flex-direction: row;
+    max-width: 500px;
+}
+
+.btn-show-one-tea-div-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.width250 {
+    width: 250px;
+}
+
+.margin10{
+    margin:10px
+}
+
+a-style{
+    color: rgb(23, 132, 43);
+    text-decoration: none;
+}
+
+a-style:hover{
+    color: rgb(25, 176, 53);
+    text-decoration: underline 
 }
