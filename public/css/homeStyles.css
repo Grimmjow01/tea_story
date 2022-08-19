@@ -4,16 +4,16 @@
 
 .home {
     background-image: url('../img/vetki.jpeg');
-     background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
     /* height: 92vh;  */
     background-size: 100%;
     min-width: 100vh;
     min-height: 280vh;
     display: flex;
     justify-content: center;
-    align-items:flex-start;
+    align-items: flex-start;
 }
 
 .home_container {
@@ -38,8 +38,8 @@
     background-color: rgb(145, 173, 153);
 } */
 
-.margin5{
-    margin-right:5px;
+.margin5 {
+    margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -55,22 +55,30 @@
     margin-bottom: 10px;
 }
 
-.carousel-inner{
+.carousel-inner {
     display: flex;
     align-items: center;
 }
 
 .card {
     display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.home-card {
+    display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .card-img-top {
     width: 200px;
-    height: 100px;
+    height: 200px;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
     background-color: black;
 }

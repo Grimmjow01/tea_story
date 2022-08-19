@@ -126,6 +126,15 @@
     --bs-card-border-color: rgba(74, 115, 86, 0.346);
 }
 
+.card-flex{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.font-big{
+    font-size: xx-large;
+}
+
 .backColorHeader {
     background-color: rgb(145, 173, 153);
 }

@@ -5,7 +5,7 @@ const Layout = require('./Layout');
 module.exports = function NewTea({ newUser }) {
   return (
     <Layout newUser={newUser}>
-      {/* <link rel="stylesheet" href="../css/ediTea.css" /> */}
+      <script defer src="/js/newTea.js" />
       <div className="add-new-tea">
         <h1 className="margin10">Добавить</h1>
         <br />

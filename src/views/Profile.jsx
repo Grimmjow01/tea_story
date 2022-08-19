@@ -17,10 +17,10 @@ module.exports = function Profile({
                 <br />
                 <div>
                   {teaInforms.map((teaInform) => (
-                    <div className="card">
+                    <div className="card card-flex">
                       <div className="card-body" key={teaInform.id}>
                         {/* <li className="tea-item pad-b-4" key={teaInform.id}> */}
-                        <a href={`/profile/${teaInform.id}`} className="tea-title font-2 pad-b-1-4 c-white a-style">{teaInform.title}</a>
+                        <a href={`/profile/${teaInform.id}`} className="tea-title font-2 pad-b-1-4 c-white a-style font-big">{teaInform.title}</a>
                         <p className="tea-date block font-3-4 c-lt-gray margin5 font-small">
                           Written on
                           {' '}
@@ -39,18 +39,19 @@ module.exports = function Profile({
             )
               : (
                 teaComments.map((teaComment) => (
-
-                  <div className="card">
-                    <div className="card-body ">
-                      <a href={`/tea/${teaComment.tea_id}`} className="font-2 pad-b-1-4 c-white a-style">{teaInforms[teaComment.tea_id - 3].title}</a>
-                      {/* <li> */}
-                      <p>{teaComment.text}</p>
-                      <p className="tea-date block font-3-4 c-lt-gray margin5 font-small">
-                        Written on
-                        {' '}
-                        {String(teaComment.createdAt).slice(0, 16)}
-                      </p>
-                      {/* </li> */}
+                  <div className="container-xl">
+                    <div className="card card-flex">
+                      <div className="card-body ">
+                        <a href={`/tea/${teaComment.tea_id}`} className="font-2 pad-b-1-4 c-white a-style font-big">{teaInforms[teaComment.tea_id - 1].title}</a>
+                        {/* <li> */}
+                        <p>{teaComment.text}</p>
+                        <p className="tea-date block font-3-4 c-lt-gray margin5 font-small">
+                          Written on
+                          {' '}
+                          {String(teaComment.createdAt).slice(0, 16)}
+                        </p>
+                        {/* </li> */}
+                      </div>
                     </div>
                   </div>
 
