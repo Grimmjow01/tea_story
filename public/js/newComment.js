@@ -26,6 +26,7 @@ btn?.addEventListener('click', async (e) => {
     const result = await responce.json();
     const newComme = document.createElement('div');
     newComme.classList.add('card');
+    newComme.classList.add('card-width-comment');
     newComme.innerHTML = `<div class="card-body">
     <h4>${loginN}</h4>
     ${text}

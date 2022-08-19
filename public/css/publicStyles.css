@@ -58,13 +58,25 @@
     background-image: url(../img/auth.jpg);
     background-size: 100%;
     background-position: 0;
-    min-width: 100vh;
+    min-width: 100vw;
     min-height: 100vh;
     margin-top: 0%;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
+}
+
+.show-one-tea {
+    background-image: url(../img/auth.jpg);
+    background-size: 100%;
+    background-position: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .new-tea-form {
@@ -114,6 +126,15 @@
     --bs-card-border-color: rgba(74, 115, 86, 0.346);
 }
 
+.card-flex{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.font-big{
+    font-size: xx-large;
+}
+
 .backColorHeader {
     background-color: rgb(145, 173, 153);
 }
@@ -133,6 +154,12 @@
     justify-content: space-between;
 }
 
+.flex-div-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .width250 {
     width: 250px;
 }
@@ -141,12 +168,12 @@
     margin:10px
 }
 
-a-style{
+.a-style{
     color: rgb(23, 132, 43);
     text-decoration: none;
 }
 
-a-style:hover{
+.a-style:hover{
     color: rgb(25, 176, 53);
     text-decoration: underline 
 }
