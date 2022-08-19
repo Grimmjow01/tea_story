@@ -14,12 +14,10 @@ router.get('/profile', async (req, res) => {
   try {
     const { newUser, role } = req.session;
     const teaInforms = await Tea.findAll({ order: [['id']] });
-    const { id } = await User.findOne({ where: { login: newUser }, raw: true });
-    const teaComments = await Comment.findAll({ where: { user_id: id }, raw: true });
-
-    renderTemplate(Profile, {
-      teaInforms, teaComments, role, newUser, id,
-    }, res);
+    const { id } = await User.findOne({ where: {login: newUser}, raw: true });
+    const teaComments = await Comment.findAll({
+      where: { user_id: id }, raw: true });
+    renderTemplate(Profile, { teaInforms, teaComments, role, newUser, id }, res);
   } catch (error) {
     renderTemplate(Error, {
       message: 'Не удалось получить записи из базы данных.',
@@ -42,13 +40,12 @@ router.get('/profile/newtea', async (req, res) => {
 
 router.post('/profile/newtea', async (req, res) => {
   const {
-    title, location, image_url, discription, sort_tea,
+    title, location, discription, sort_tea,
   } = req.body;
-
-  console.log('==============', req.body);
+  const defaultImageUrl = req.body.image_url || 'https://i.pinimg.com/564x/bd/e4/db/bde4db19ccd26623b81667e0bc2d3605.jpg';
   try {
     const newTea = await Tea.create({
-      title, location, image_url, discription, sort_tea,
+      title, location, image_url: defaultImageUrl, discription, sort_tea,
     }, {
       returning: true,
       plain: true,
@@ -70,7 +67,7 @@ router.get('/profile/:id', async (req, res) => {
     renderTemplate(ShowTea, { oneTea, newUser }, res);
   } catch (error) {
     renderTemplate(Error, {
-      message: 'Не удалось получить записи из базы данных.',
+      message: 'Сюда нельзя незарегистрированному пользователю',
       error: {},
     }, res);
   }

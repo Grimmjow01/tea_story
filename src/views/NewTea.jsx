@@ -5,10 +5,10 @@ const Layout = require('./Layout');
 module.exports = function NewTea({ newUser }) {
   return (
     <Layout newUser={newUser}>
-      <script defer src="/js/newTea.js" />
       {/* <link rel="stylesheet" href="../css/ediTea.css" /> */}
-      <section className="home">
-        <h1>Добавить</h1>
+      <div className="add-new-tea">
+        <h1 className="margin10">Добавить</h1>
+        <br />
 
         <form id="newTeaForm" action="/profile/newtea" method="post">
           Название:
@@ -18,7 +18,7 @@ module.exports = function NewTea({ newUser }) {
             name="title"
             type="text"
             tabIndex="1"
-            className="block w-100 no-outline no-border pad-1 mar-b-2"
+            className="block w-100 no-outline no-border pad-1 mar-b-2 form-control form-control-lg new-tea-form"
           />
 
           Сорт:
@@ -26,7 +26,7 @@ module.exports = function NewTea({ newUser }) {
             id="sort-textarea"
             name="sort_tea"
             tabIndex="2"
-            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-2 mar-b-2"
+            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-2 mar-b-2 form-control form-control-lg new-tea-form"
           />
 
           Место культивации:
@@ -34,7 +34,7 @@ module.exports = function NewTea({ newUser }) {
             id="location-textarea"
             name="location"
             tabIndex="3"
-            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-3 mar-b-2"
+            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-3 mar-b-2 form-control form-control-lg new-tea-form"
           />
 
           Описание:
@@ -42,7 +42,7 @@ module.exports = function NewTea({ newUser }) {
             id="discription-textarea"
             name="discription"
             tabIndex="4"
-            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-4 mar-b-2"
+            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-4 mar-b-2 form-control form-control-lg new-tea-form"
           />
 
           Изображение:
@@ -50,20 +50,20 @@ module.exports = function NewTea({ newUser }) {
             id="image-textarea"
             name="image_url"
             tabIndex="5"
-            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-5 mar-b-2"
+            className="block w-100 h-10 no-resize no-outline no-border no-resize pad-5 mar-b-2 form-control form-control-lg new-tea-form"
           />
 
           <button
             type="submit"
             value="Update"
             tabIndex="6"
-            className="newTeabutton"
+            className="newTeabutton btn btn-success"
           >
             Отправить
 
           </button>
         </form>
-      </section>
+      </div>
     </Layout>
   );
 };

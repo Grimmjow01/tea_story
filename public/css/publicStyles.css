@@ -1,3 +1,7 @@
+* {
+    color: rgb(80, 113, 89);
+}
+
 .form-control {
     max-width: 300px;
     margin-bottom: 20px;
@@ -6,8 +10,26 @@
 .flexdiv {
     /* margin-left: 300px;
     margin-right: 300px;; */
-    display: flex;
+    width: 100%;
+    display: inline-flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    /* gap: 70px */
+}
+
+.transparent {
+    background-color: rgba(145, 173, 153, 0.477);
+    /* margin-left: 500px;
+    margin-right: 500px; */
+    width: 800px;
+    border-radius: 25px;
+    /* margin-top: 30px;; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 250px;
+    margin-bottom: 250px;
+    ;
 }
 
 .center {
@@ -21,24 +43,41 @@
 }
 
 .lvica {
-    background-image: url(../images/IMG_7817-3.jpg);
+    background-image: url(../img/auth.jpg);
     background-size: 100%;
     background-position: 0;
+    min-width: 100vh;
     min-height: 100vh;
     margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.transparent {
-    background-color: rgba(255, 255, 255, 0.317);
-    background-color;
-    margin-left: 500px;
-    margin-right: 500px;
-    border-radius: 25px;
-    /* margin-top: 30px;; */
+.add-new-tea {
+    background-image: url(../img/auth.jpg);
+    background-size: 100%;
+    background-position: 0;
+    min-width: 100vh;
+    min-height: 100vh;
+    margin-top: 0%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
 }
+
+.new-tea-form {
+    max-width: 600px;
+    ;
+}
+
 
 .formTransparent {
     opacity: 0.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .formTransparent:hover {
@@ -46,6 +85,68 @@
 }
 
 .btn {
-    margin-bottom: 30px;
-    ;
+    /* margin-bottom: 30px; */
+}
+
+.fontColor {
+    /* color: rgb(38, 67, 46); */
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.font-small {
+    font-size: small;
+}
+
+.navbar {
+    color: rgb(38, 67, 46);
+    --bs-navbar-color: rgb(38, 67, 46);
+    --bs-navbar-hover-color: rgb(38, 67, 46);
+    --bs-navbar-disabled-color: rgb(38, 67, 46);
+    --bs-navbar-active-color: rgb(38, 67, 46);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.655);
+    --bs-card-border-width: 2px;
+    --bs-card-border-color: rgba(74, 115, 86, 0.346);
+}
+
+.backColorHeader {
+    background-color: rgb(145, 173, 153);
+}
+
+.card-width-comment {
+    width: 1000px;
+}
+
+.show-one-tea-div-flex {
+    display: flex;
+    flex-direction: row;
+    max-width: 500px;
+}
+
+.btn-show-one-tea-div-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.width250 {
+    width: 250px;
+}
+
+.margin10{
+    margin:10px
+}
+
+a-style{
+    color: rgb(23, 132, 43);
+    text-decoration: none;
+}
+
+a-style:hover{
+    color: rgb(25, 176, 53);
+    text-decoration: underline 
 }
