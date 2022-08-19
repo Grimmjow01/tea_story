@@ -9,16 +9,18 @@ module.exports = function InfoTea(newInfo) {
   const mas = newInfo.comments;
   const activUser = newInfo.oneUser;
   const { role, newUser } = newInfo;
+  console.log("image_url--->", image_url)
   return (
     <Layout newUser={newUser}>
       <link rel="stylesheet" href="../css/info.css" />
       <script defer src="../js/newComment.js" />
-      <div className="container-xl Content" id={id}>
-        <div className="card mb-3 loginId" id={activUser.id} max-width="540px;">
+      <div className="tea-div Content" id={id}>
+        <div className="card card-entire mb-3 loginId card-flex" id={activUser.id} max-width="250px;">
           <div className="row g-0 login" id={newUser}>
             <div className="col-md-4">
               <img src={image_url} className="img-fluid rounded-start" alt="..." />
             </div>
+            {/* <div className="card"> */}
             <div className="col-md-8 col-sm-4">
               <div className="card-body">
                 <h2 className="card-title">{title}</h2>
@@ -39,7 +41,7 @@ module.exports = function InfoTea(newInfo) {
                     <form>
                       <input className="form-control form-control-lg" type="text" name="comment" placeholder="Оставьте свой комментарий! :)" aria-label=".form-control-lg example" />
                       <div className="d-grid gap-2 d-md-block">
-                        <button className="btn btn-primary me-md-2 plus" type="submit">Оставить комментарий</button>
+                        <button className="btn btn-success plus" type="submit">Оставить комментарий</button>
                       </div>
                     </form>
                   )
@@ -49,30 +51,35 @@ module.exports = function InfoTea(newInfo) {
             </div>
           </div>
         </div>
+        <br />
         <h3 className="namecom">Комментарии о чае:</h3>
         <div className="comments">
           {role
-            ? mas?.map((el, index) => (
-              <div className="card">
-                <div className="card-body">
+            ? mas?.map((el, index) => ( // админ
+              <div className="card card-width-comment">
+                <div className="card-body ">
                   <h4>{el['User.login']}</h4>
                   {el.text}
                 </div>
-                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button className="btn btn-danger me-md-2 del" type="button" id={el.id} />
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end btn-center">
+                  <button className="btn me-md-2 del btn-nonVisible" type="button" id={el.id} width="15px" height="20px">
+                    <img src="../img/delete.png" alt="..." width="15px" height="20px" className="img-btn" id={el.id} />
+                  </button>
                 </div>
               </div>
             ))
-            : mas?.map((el, index) => (
-              <div className="card">
-                <div className="card-body">
+            : mas?.map((el, index) => ( // юзер и гость
+              <div className="card ">
+                <div className="card-body ">
                   <h4>{el['User.login']}</h4>
                   {el.text}
                 </div>
-                {el['User.login'] === newUser
+                {el['User.login'] === newUser // юзер
                   ? (
                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                      <button className="btn btn-danger me-md-2 del" type="button" id={el.id} />
+                      <button className="btn me-md-2 del btn-nonVisible" type="button" id={el.id} width="15px" height="20px">
+                        <img src="../img/delete.png" alt="..." width="15px" height="20px" className="img-btn" id={el.id} />
+                      </button>
                     </div>
                   )
                   : console.log('123')}
