@@ -1,12 +1,19 @@
+* {
+    color: rgb(77, 104, 85);
+}
+
 .home {
-    background-image: url('../img/homeBack.jpeg');
-    background-repeat: no-repeat;
+    background-image: url('../img/vetki.jpeg');
+     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    height: 100%;
+    background-size: cover; 
+    /* height: 92vh;  */
+    background-size: 100%;
+    min-width: 100vh;
+    min-height: 280vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
 }
 
 .home_container {
@@ -19,7 +26,27 @@
 .home_map {
     width: 100%;
     height: 80vh;
-    border: 5px solid white;
+    border: 5px solid rgb(80, 113, 89);
+    border-radius: 5px;
+}
+
+/* header {
+    background-color: rgb(79, 131, 93);
+} */
+
+/* .backColor {
+    background-color: rgb(145, 173, 153);
+} */
+
+.margin5{
+    margin-right:5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.margin20 {
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.414);
     border-radius: 5px;
     margin-bottom: 10px;
 }

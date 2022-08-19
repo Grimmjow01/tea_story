@@ -11,8 +11,9 @@ async function getTeaData() {
 
   ymaps.ready(() => {
     const myMap = new ymaps.Map('home_map', {
-      center: [55.751574, 37.573856],
-      zoom: 2,
+      // center: [55.751574, 37.573856],
+      center: [33.080569, 78.444949],
+      zoom: 3.5,
       controls: ['zoomControl'],
     }, {
       searchControlProvider: 'yandex#search',

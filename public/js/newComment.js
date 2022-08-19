@@ -30,15 +30,21 @@ btn?.addEventListener('click', async (e) => {
     <h4>${loginN}</h4>
     ${text}
   </div>
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-danger me-md-2 del" type="button" id=${result.id} />
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end btn-center">
+    <button class="btn me-md-2 del btn-nonVisible" type="button" id=${result.id}>
+      <img src="../img/delete.png" alt="..." width="15px" height="20px" />
+    </button>
   </div>`;
     allcom.appendChild(newComme);
-  } else alert('Пустой комментарий не отправить');
+  } else {
+    console.log('ghfytjgj');
+    alert('Пустой комментарий не отправить');
+  }
 });
 
 allcom?.addEventListener('click', async (e) => {
-  if (e.target.tagName === 'BUTTON') {
+  console.log('e.target', e.target);
+  if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
     e.preventDefault();
     const { id } = e.target;
     const response = await fetch('/tea/deleteCom', {
@@ -48,8 +54,10 @@ allcom?.addEventListener('click', async (e) => {
       },
       body: JSON.stringify({ id }),
     });
-    if (response.status === 200) {
+    if (response.status === 200 && e.target.tagName === 'BUTTON') {
       allcom.removeChild(e.target.parentNode.parentNode);
+    } else if (response.status === 200 && e.target.tagName === 'IMG') {
+      allcom.removeChild(e.target.parentNode.parentNode.parentNode);
     }
   }
 });
