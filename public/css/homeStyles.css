@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 92vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,4 +21,29 @@
     height: 80vh;
     border: 5px solid white;
     border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.carousel {
+    margin-bottom: 10px;
+}
+
+.carousel-inner{
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 200px;
+    height: 100px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
 }
