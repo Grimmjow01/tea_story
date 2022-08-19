@@ -5,9 +5,10 @@ const { Tea } = require('../../db/models');
 
 const router = express.Router();
 
-router.get('/home', (req, res) => {
+router.get('/home', async (req, res) => {
   const { newUser } = req.session;
-  renderTemplate(Home, { newUser }, res);
+  const teas = await Tea.findAll({ raw: true });
+  renderTemplate(Home, { newUser, teas }, res);
 });
 
 router.post('/home/tea', async (req, res) => {
