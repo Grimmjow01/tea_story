@@ -11,27 +11,18 @@ newTeaForm.addEventListener('submit', async (e) => {
   const obj = {
     title, location, image_url, discription, sort_tea,
   };
+  if (title && location && discription && sort_tea) {
+    const responce = await fetch('/profile/newtea', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
 
-  const responce = await fetch('/profile/newtea', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ obj }),
-  });
-
-  const responceJson = await responce.json();
-
-  if (responceJson.teaEditingSuccessful) {
-    const addDiv = document.createElement('div');
-    addDiv.classList.add('add');
-    addDiv.innerText = 'Отправлено';
-    e.target.parentElement.append(addDiv);
-    // window.location = `/profile/${e.target.dataset.teaid}`;
+    const responceJson = await responce.json();
+    window.location.assign(`/profile/${responceJson.newTea.id}`);
   } else {
-    const errorDiv = document.createElement('div');
-    errorDiv.classList.add('error');
-    errorDiv.innerText = responceJson.errorMessage;
-    e.target.parentElement.append(errorDiv);
+    alert('Заполните все необходимые поля');
   }
 });

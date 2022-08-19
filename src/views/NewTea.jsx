@@ -2,14 +2,15 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function NewTea({newUser}) {
+module.exports = function NewTea({ newUser }) {
   return (
     <Layout newUser={newUser}>
-      <link rel="stylesheet" href="../css/ediTea.css" />
+      <script defer src="/js/newTea.js" />
+      {/* <link rel="stylesheet" href="../css/ediTea.css" /> */}
       <section className="home">
         <h1>Добавить</h1>
 
-        <form id="newTeaForm" method="POST">
+        <form id="newTeaForm" action="/profile/newtea" method="post">
           Название:
           {' '}
           <input

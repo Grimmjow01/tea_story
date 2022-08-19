@@ -6,7 +6,6 @@ const ShowTea = require('../views/ShowTea');
 const EditTea = require('../views/EditTea');
 const NewTea = require('../views/NewTea');
 
-
 const renderTemplate = require('../../lib/renderReactModule');
 
 const { Tea, Comment, User } = require('../../db/models');
@@ -15,10 +14,12 @@ router.get('/profile', async (req, res) => {
   try {
     const { newUser, role } = req.session;
     const teaInforms = await Tea.findAll({ order: [['id']] });
-    const { id } = await User.findOne({ where: {login: newUser}, raw: true });
-    const teaComments = await Comment.findAll({
-      where: { user_id: id }, raw: true });
-    renderTemplate(Profile, { teaInforms, teaComments, role, newUser, id }, res);
+    const { id } = await User.findOne({ where: { login: newUser }, raw: true });
+    const teaComments = await Comment.findAll({ where: { user_id: id }, raw: true });
+
+    renderTemplate(Profile, {
+      teaInforms, teaComments, role, newUser, id,
+    }, res);
   } catch (error) {
     renderTemplate(Error, {
       message: 'Не удалось получить записи из базы данных.',
@@ -30,7 +31,7 @@ router.get('/profile', async (req, res) => {
 router.get('/profile/newtea', async (req, res) => {
   try {
     const { newUser, role } = req.session;
-    renderTemplate(NewTea, {newUser}, res);
+    renderTemplate(NewTea, { newUser }, res);
   } catch (error) {
     renderTemplate(Error, {
       message: 'Запись не найдена.',
@@ -43,6 +44,8 @@ router.post('/profile/newtea', async (req, res) => {
   const {
     title, location, image_url, discription, sort_tea,
   } = req.body;
+
+  console.log('==============', req.body);
   try {
     const newTea = await Tea.create({
       title, location, image_url, discription, sort_tea,
@@ -50,8 +53,7 @@ router.post('/profile/newtea', async (req, res) => {
       returning: true,
       plain: true,
     });
-    
-    res.redirect(`/profile/${newTea.id}`);
+    res.json({ newTea });
   } catch (error) {
     console.error('error=============', error);
     renderTemplate(Error, {
@@ -108,7 +110,7 @@ router.patch('/profile/:id', async (req, res) => {
 
 router.delete('/profile/:id', async (req, res) => {
   try {
-    await Comment.destroy({ where: { tea_id: req.params.id } })
+    await Comment.destroy({ where: { tea_id: req.params.id } });
     await Tea.destroy({ where: { id: req.params.id } });
     res.json({ isDeleteSuccessful: true });
   } catch (error) {
